@@ -97,15 +97,6 @@ export default function EditPage({
 
           )}
 
-          {/* // {transformation === "grayscale" && (
-            //   <CldImage
-            //     src={publicId}
-            //     width="1200"
-            //     height="1400"
-            //     grayscale
-            //     alt="some image"
-            //   />
-            // )} */}
 
           {transformation === "grayscale" && (
             <Image
@@ -116,15 +107,6 @@ export default function EditPage({
             />
           )}
 
-          {/* {transformation === "pixelate" && (
-            <CldImage
-              src={publicId}
-              width="1200"
-              height="1400"
-              pixelate
-              alt="some image"
-            />
-          )} */}
 
           {transformation === "pixelate" && (
             <Image
