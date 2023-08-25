@@ -87,16 +87,6 @@ export default function EditPage({
             />
           )}
 
-          {/* {transformation === "blur" && (
-            <CldImage
-              src={publicId}
-              width="1200"
-              height="1400"
-              blur="800"
-              alt="some image"
-            />
-          )} */}
-
           {transformation === "blur" && (
             <Image
               src={`https://res.cloudinary.com/${cloudName}/image/upload/e_blur:800/${publicId}`}
