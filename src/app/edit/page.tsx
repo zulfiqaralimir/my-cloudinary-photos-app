@@ -59,9 +59,9 @@ export default function EditPage({
           </div>
 
           <Button onClick={() => setTransformation("blur")}>Apply Blur</Button>
-          <Button onClick={() => setTransformation("grayscale")}>
+          {/* <Button onClick={() => setTransformation("grayscale")}>
             Convert to Gray
-          </Button>
+          </Button> */}
           <Button onClick={() => setTransformation("pixelate")}>
             Pixelate
           </Button>
@@ -87,7 +87,7 @@ export default function EditPage({
             />
           )}
 
-          {transformation === "blur" && (
+          {/* {transformation === "blur" && (
             <Image
               src={`https://res.cloudinary.com/${cloudName}/image/upload/e_blur:800/${publicId}`}
               alt={"Blur Image"}
@@ -95,7 +95,7 @@ export default function EditPage({
               height="400"
             />
 
-          )}
+          )} */}
 
 
           {transformation === "grayscale" && (
