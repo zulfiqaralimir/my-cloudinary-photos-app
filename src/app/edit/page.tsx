@@ -4,7 +4,10 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { CldImage } from "next-cloudinary";
+import Image from "next/image";
 import { useState } from "react";
+
+
 
 export default function EditPage({
   searchParams: { publicId },
@@ -24,6 +27,8 @@ export default function EditPage({
 
   const [pendingPrompt, setPendingPrompt] = useState("");
   const [prompt, setPrompt] = useState("");
+
+  const cloudName = process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME;
 
   return (
     <section>
@@ -82,7 +87,7 @@ export default function EditPage({
             />
           )}
 
-          {transformation === "blur" && (
+          {/* {transformation === "blur" && (
             <CldImage
               src={publicId}
               width="1200"
@@ -90,19 +95,38 @@ export default function EditPage({
               blur="800"
               alt="some image"
             />
+          )} */}
+
+          {transformation === "blur" && (
+            <Image
+              src={`https://res.cloudinary.com/${cloudName}/image/upload/e_blur:800/${publicId}`}
+              alt={"Blur Image"}
+              width="600"
+              height="400"
+            />
+
           )}
 
+          {/* // {transformation === "grayscale" && (
+            //   <CldImage
+            //     src={publicId}
+            //     width="1200"
+            //     height="1400"
+            //     grayscale
+            //     alt="some image"
+            //   />
+            // )} */}
+
           {transformation === "grayscale" && (
-            <CldImage
-              src={publicId}
-              width="1200"
-              height="1400"
-              grayscale
-              alt="some image"
+            <Image
+              src={`https://res.cloudinary.com/${cloudName}/image/upload/e_grayscale/${publicId}`}
+              alt={"Greyscale Image"}
+              width="600"
+              height="400"
             />
           )}
 
-          {transformation === "pixelate" && (
+          {/* {transformation === "pixelate" && (
             <CldImage
               src={publicId}
               width="1200"
@@ -110,7 +134,17 @@ export default function EditPage({
               pixelate
               alt="some image"
             />
+          )} */}
+
+          {transformation === "pixelate" && (
+            <Image
+              src={`https://res.cloudinary.com/${cloudName}/image/upload/e_pixelate:20/${publicId}`}
+              alt={"Pixelate Image"}
+              width="600"
+              height="400"
+            />
           )}
+
 
           {transformation === "bg-remove" && (
             <CldImage
