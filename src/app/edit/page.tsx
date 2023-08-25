@@ -19,7 +19,7 @@ export default function EditPage({
   const [transformation, setTransformation] = useState<
     | undefined
     | "generative-fill"
-    | "blur"
+    // | "blur"
     | "grayscale"
     | "pixelate"
     | "bg-remove"
