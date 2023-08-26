@@ -89,7 +89,7 @@ export default function EditPage({
 
           {transformation === "blur" && (
             <Image
-              src={`https://res.cloudinary.com/${cloudName}/image/upload/e_blur:800/${publicId}`}
+              src={`https://res.cloudinary.com/${cloudName}/image/upload/${publicId}`}
               alt={"Blur Image"}
               width="600"
               height="400"
